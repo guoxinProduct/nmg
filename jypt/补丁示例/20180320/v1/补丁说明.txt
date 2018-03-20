@@ -1,0 +1,74 @@
+本次更改的内容涉及（增加 开标监控 功能）：
+更改说明：
+  java文件的创建 
+   sql文件创建 
+  jsp文件创建
+  菜单添加
+  菜单管理功能下 项目监督下
+  开标监控url:tBTenderInfoController.do?list
+
+1、java文件的创建
+新建位置：com.gxcy.report
+dao:TBTenderInfoDao.java
+service：TBTenderInfoServiceI.java
+serviceImpl：ReportSinglePriceServiceImpl.java 
+创建page：TBTenderInfoPage.java
+controller:TBTenderInfoController.java
+2、sql文件的创建
+新建位置：com.gxcy.report.sql
+开标监控列表
+TBTenderInfoDao_dataTenderInfoList.sql
+一阶段两阶段项目经济签到未解密的名单列表
+TBTenderInfoDao_economicSignedAndUnDecryptedList.sql
+包开启及启动解密及完成情况列表 
+TBTenderInfoDao_packOpenAndDecryptAndFinishList.sql
+缴费家数
+TBTenderInfoDao_payNum.sql
+项目启动数量情况列表
+TBTenderInfoDao_projectStartNumList.sql
+报名家数
+TBTenderInfoDao_registrNum.sql
+签到解密家数情况列表
+TBTenderInfoDao_signDecryptNumList.sql
+两阶段技术解密经济未签到的名单列表
+TBTenderInfoDao_technicalDecryptedAndUnSignedByTwoStageList.sql
+两阶段项目技术签到未解密的名单列表
+TBTenderInfoDao_technicalSignedAndUnDecryptedList.sql
+投标人联系方式列表
+TBTenderInfoDao_tenderContactList.sql
+解密失败投标人情况列表
+TBTenderInfoDao_tendererDecryptFailList.sql
+一阶段项目已经投标，且相应标段已经开启，但经济未签到列表
+TBTenderInfoDao_tenderOpenedAndNoEconomicSignList.sql
+两阶段项目已经投标，且相应标段已经开启，但未技术签到列表
+TBTenderInfoDao_tenderOpenedAndNoTechnicalSignList.sql
+投标情况
+TBTenderInfoDao_tenderSituation.sql
+3、jsp文件
+新建位置：webapp.webpage.com.gxcy.report
+一阶段两阶段项目经济签到未解密的名单列表
+economicSignedAndUnDecryptedList.jsp
+查看开标中
+inTenderDetail.jsp
+包开启及启动解密及完成情况列表
+packOpenAndDecryptAndFinishList.jsp
+查看标前情况
+preTenderDetail.jsp
+项目启动数量列表
+projectStartNumList.jsp
+签到解密家数情况列表
+signDecryptNumList.jsp
+开标监控列表
+tBTenderInfoList.jsp
+两阶段技术解密经济未签到的名单列表
+technicalDecryptedAndUnSignedByTwoStageList.jsp
+两阶段技术解密经济未签到的名单列表
+technicalSignedAndUnDecryptedList.jsp
+解密失败投标人情况列表
+tendererDecryptFailList.jsp
+一阶段项目已经投标，且相应标段已经开启，但经济未签到列表
+tenderOpenedAndNoEconomicSignList.jsp
+两阶段项目已经投标，且相应标段已经开启，但未技术签到列表
+tenderOpenedAndNoTechnicalSignList.jsp
+
+

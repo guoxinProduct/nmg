@@ -1,0 +1,5 @@
+tblBankParamter为实体名称
+页面：新增tblBankParamter-add，修改tblBankParamter-update，查看tblBankParamter-detail，列表audittblBankParamterList，blBankParamterList
+方法名：跳转gotBlBankParamterUpdate，gotBlBankParamterAdd
+保存删除的doBlBankParamterUpdate，doBlBankParamterdel，
+列表查询方法datagridBlBankParamter

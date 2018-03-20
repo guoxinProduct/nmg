@@ -1,0 +1,79 @@
+模块划分:
+1.achievement  业绩模块
+2.announcement 公告公示模块
+3.badBehaviour 黑白名单模块
+4.biddoc  招标文件模块(包含招标文件、投标报价指标、评审指标等)
+5.budget  采购预算模块
+6.calibration  通知书、中标详情模块(包含资审通知书、中标结果等)
+7.cash  银行模块(银行、保证金等)
+8.cgcontract  cg合同模块
+9.chart  图表统计模块
+10.clarification  澄清模块
+11.common  公共模块(枚举等)
+12.complain  投诉模块
+13.contract  合同模块
+14.dataCheck  检测监控模块
+15.decryptFile  模拟解密模块
+16.docbuy  标书费模块
+17.downloadtoolrecords  桌面工具下载模块
+18.entrustcontract  委托合同模块(包含委托合同、申报书等)
+19.exceptionapply  异常处理模块
+20.expert  评标委员模块
+21.feemanage  费用管理模块(包含代理服务费、图纸押金、专家咨询费、履约保证金、交易服务费等)
+22.filter  sql过滤器
+23.http  对外接口模块(包含工具等)
+	(1)archive  项目文件归档接口
+	(2)base  公共服务接口
+	(3)bid  投标接口
+	(4)biddingFile  招标接口
+	(5)bidEvaluation  评标结果接口
+	(6)bidOpening  开标接口
+	(7)bulletin  公告接口
+	(8)generalFile  公告内容制作接口
+	(9)invitation  邀请函接口
+	(10)invoice  发票接口
+	(11)msg  消息中心接口
+	(12)notice  通知书接口
+	(13)pay  支付接口
+	(14)qualificationResult  确定资审结果接口
+	(15)sendData  运营平台数据接口
+	(16)serviceCenter  上传文件接口
+	(17)signup 报名接口
+	(18)tenderProjectInfo  投标接口接口
+	(19)user  用户信息接口
+	(20)winningResult  开标结果接口
+24.inquiry  询价函模块
+25.invitation  邀请函模块
+26.negotiationrecord  报价模块
+27.openbid  开标模块(包含开标结果、开标供应商、开标一览等)
+28.operation  招标咨询模块(包含招标咨询、贷款申请等)
+29.organizationbid  业务规则模块
+30.pay  支付模块(第三方支付等)
+31.paymentservice  支付扩展模块(支付扩展、服务订阅等)
+32.portal  待办模块
+33.prebulletin  预公告模块
+34.procurementplan 采购计划模块
+35.products  产品模块(包含产品、品牌、评价等)
+36.professionalqualification  职业资格人员模块
+37.projectFile  项目建档模块(包含项目建档、项目移交、项目分包)
+38.projectnode  项目节点模块
+39.prospecting  踏勘模块
+40.purchaseapply  采购申请模块(包含采购申请、发布采购需求等)
+41.purchaseorder  订单模块(包含订单、购物车、邮寄地址等)
+42.register  注册模块(包含注册、发票等)
+43.report  图表统计模块
+44.reviewbid  评标模块
+45.reward  奖励模块
+46.serialnumber  编号生成模块
+47.servicecenter  业务中心模块(包含品目处理、地域处理、产品类别、程序活动信息记录、行业分类、项目或公告等收藏、短信处理、版本等)
+48.serviceInfo  CA申请模块
+49.signup  报名模块
+50.supplierbid  投标模块(包含投标信息、投标回执、资审结果明细、入围结果等)
+51.systemConfig  配置文件模块
+52.tender  项目模块(包含项目、工作小组等)
+53.tenderinfo 项目信息模块
+54.userca CA模块
+55.usergroup  用户分组模块
+56.webservice  发送模块
+57.workflow  人员机构归口管理模块
+58.workOrder  工单模块

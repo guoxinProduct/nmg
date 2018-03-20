@@ -1,0 +1,38 @@
+采购人   
+tenderinfo项目信息管理：项目信息管理 
+entrustcontract委托管理： 委托代理合同 
+
+供应商 
+tenderproject招标项目管理：我的项目
+contract合同管理： 查看合同
+announcement公告管理：招标公告，成交公告
+signup 报名
+dosbuy 标书费
+代理机构，
+tender招标项目管理：项目立项
+entrustcontract委托管理：确认代理合同
+organizationbid组织招标：规则设置，时间规则设置，分包设置，
+announcement招标公告：招标公告
+biddoc招标文件：招标文件
+invitation邀请函：发邀请函
+
+supplierbid供应商投标：投标
+
+openbid开标管理：录入开标一览表
+
+reviewbid评标管理：组建评审小组，录入初审，复审，最终结果
+
+calibration 定标管理：确认中标人，(中标公示，中标公告 announcement)，中标通知书
+   
+contract合同管理： 录入合同
+接口
+webservice
+  招投开评工具
+  electronicstool
+     bid
+     evaluate
+     
+     sysConfig.properties配置固定参数
+     servicecenter服务代码，例如短信，模板之类的，非业务代码
+     common公共类，枚举
+   src\main\webapp\WEB-INF\template 模板存放路径

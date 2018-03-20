@@ -1,0 +1,74 @@
+﻿一：本次更新的内容涉及:
+二：配置文件涉及改动
+三.补丁脚本按顺序执行
+
+一：本次更新的内容涉及:
+1、招标公告、变更公告、中标候选人公示、中标结果公示使用工具制作相应内容；
+2、项目及使用工具制作相应公告对应的相应审核功能
+3、发送至国家公共服务平台的新定时任务（兼容老的版本）
+4、变更公告处屏蔽掉重新制作招标文件的功能
+5、行业分类
+
+
+二：配置文件涉及改动
+1、spring-mvc.xml增加以下内容
+<value>generalFileHS.do?getGeneralFileApply</value>
+<value>generalFileHS.do?getGeneralFileVarInfo</value>
+<value>generalFileHS.do?getPackSupplierListByStageIds</value>
+<value>generalFileHS.do?getPackFeeNoticeListByStageIds</value>
+<value>generalFileHS.do?getPackCodesAndStageIdsByRelationID</value>   
+
+2.
+sysConfig.properties 增加
+pdf.languagedir=/usr/share/xpdf/xpdf-chinese-simplified
+url.pubServicePlatUrl=http://bulletin.cebpubservice.com/
+
+3.webservice.properties 增加以下配置
+pubserviceInterface.urlnew=http://111.2.209.76:8080/ctpsp_ceb_fep/cebservice/ReceiveService?wsdl
+pubserviceInterface.pathName=/home/Yuan/attachmentDir
+
+tenderProjectPhase=/schema/tenderProjectPhaseXMLSchema.xsd
+tenderBulletinPhase=/schema/tenderBulletinPhaseXMLSchema.xsd
+qualifyBulletinPhase=/schema/qualifyBulletinPhaseXMLSchema.xsd
+winCandidateBulletinPhase=/schema/winCandidateBulletinPhaseXMLSchema.xsd
+winBidBulletinPhase=/schema/winBidBulletinPhaseXMLSchema.xsd
+
+4、spring-mvc-timeTask.xml 增加了2个定时任务
+<!-- 20180226 add by whz -->
+	<!-- 定时任务配置   sendDataTask 定时同步到公共服务平台数据每天24点执行-->
+	<bean id="sendDataCronNewJob"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="sendDataCron" />
+		<property name="targetMethod" value="sendDataNew" />
+		<property name="concurrent" value="true" />
+	</bean>
+
+	<bean id="sendDataTaskCronNewTrigger" class="org.jeecgframework.core.timer.DataBaseCronTriggerBean">
+		<property name="jobDetail" ref="sendDataCronNewJob" />
+		<property name="cronExpression" value="0 0/3 * * * ?" />
+	</bean>
+	<!-- 定时任务配置   waitForsendDataTask 定时获取同步到公共服务平台数据-->
+	<bean id="waitForSendDataCronNewJob"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="sendDataCron" />
+		<property name="targetMethod" value="waitForsendDataNew" />
+		<property name="concurrent" value="true" />
+	</bean>
+
+	<bean id="waitForSendDataCronNewTrigger" class="org.jeecgframework.core.timer.DataBaseCronTriggerBean">
+		<property name="jobDetail" ref="waitForSendDataCronNewJob" />
+		<property name="cronExpression" value="0 0 0/4 * * ?" />
+	</bean>
+	<!-- end addby whz -->
+	
+	
+	定时任务调度器增加
+	<!-- add by whz 20180226 -->
+	<ref bean="sendDataTaskCronNewTrigger"/>
+	<ref bean="waitForSendDataCronNewTrigger"/>
+	<!-- end  add by whz -->
+三.补丁脚本按顺序执行
+201803151907_wanghz_内蒙古预生产站_工具制作公告、项目公告审核、行业分类、推送公告至公共服务平台、定时任务.sql
+四：删除以下文件（服务器上存在 本地不存在）
+com\gxcx\clarification\controller\TBClarificationReplyController_bak.class 澄清答疑相关
+com\gxcx\common\ServicePriceUtils.class  

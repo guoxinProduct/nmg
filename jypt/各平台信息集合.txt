@@ -1,0 +1,66 @@
+内蒙古项目
+一：内蒙预生产环境
+1.访问地址
+http://test.e-bidding.org/nmgdzzbcs 预生产环境地址 
+2.数据库地址 39.106.124.136 nmgdzzb
+3.svn地址
+https://172.16.7.172/svn/gxyg/jypt/tags/nmdljypt0301cp 对应正式站代码 ，预生产环境
+4.补丁更新地址
+svn://123.56.221.233/gxcx/内蒙古预生产站
+/test/usr/local/tomcat-nmg-ceshi
+二：内蒙测试站（产品站）
+1.访问地址
+http://test.e-bidding.org/nmg/
+2.数据库地址 39.106.124.136 nmdzzbtest
+3.补丁更新地址
+svn://123.56.221.233/gxcx/内蒙电力测试站
+4.svn地址
+https://172.16.7.172/svn/gxyg/xmgl/nmdl 主干
+/data/upload_test/project/2018-03/2c913b28622e3e7c01622e4f45590012
+/test/usr/local/tomcat-nmgdzzbtest 
+三：开发环境
+1.svn地址
+https://172.16.7.172/svn/gxyg/xmgl/nmdl 主干
+2.数据库 
+ 172.16.7.172 nmdzzb1205 
+
+四：正式站（生产环境）
+1.访问地址 
+http://impc.e-bidding.org/
+2.数据库地址 nmaly  nmgdzzb
+3.补丁更新地址
+svn://123.56.221.233/gxcx/内蒙电力正式站
+4.svn地址
+https://172.16.7.172/svn/gxyg/jypt/tags/nmdljypt0301cp 对应正式站代码 ，预生产环境
+
+国信平台
+一：开发环境 
+1.数据库  172.16.7.172 jypt_develop
+2.svn地址
+https://172.16.7.172/svn/gxyg/jypt/branches/master
+
+二：测试环境
+1.访问地址
+http://test.e-bidding.org/
+2.数据库地址 39.106.124.136 gxcxdzzbtest
+3.补丁更新地址
+svn://123.56.221.233/gxcx/电子招标测试站
+三：正式站
+1.访问地址
+http://www.e-bidding.org/
+2.数据库 aly dzzbgxcx
+3.补丁更新地址
+svn://123.56.221.233/gxcx/电子招标正式站
+
+运营平台
+1.svn地址
+https://172.16.7.172/svn/gxyg/jypt/tags/gjptyy
+https://172.16.7.172/svn/gxyg/jypt/tags/gjptyywfw
+2.数据库
+  172.16.7.172 gjypyy
+
+采招网
+https://172.16.7.172/svn/gxyg/xmgl/czwgxlcInterface   采招网发送到公共服务平台（国信乐采）
+一体机
+https://172.16.7.172/svn/gxyg/jypt/branches/jyptytj
+

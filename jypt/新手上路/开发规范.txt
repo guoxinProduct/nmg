@@ -1,0 +1,23 @@
+一：注：每天下午前先更新提交代码再提交，每天早上先更新代码更新，每天下班前更新工作日志
+二：根据codetemplates.xml模板，代码注释，复杂的逻辑写注释
+三：
+dao 自定义查询
+service 业务处理 数据操作
+Controller
+jsp与js同名
+列表一般都查自己的，。选择其他都是选择有效的。
+参考枚举类ProjectEnum,CommonUtilEnum
+状态参考枚举枚举类型定
+gxoa，多余的代码删掉。
+
+四：
+tblBankParamter为实体名称
+页面：新增tblBankParamter-add，修改tblBankParamter-update，查看tblBankParamter-detail，列表audittblBankParamterList，blBankParamterList
+方法名：跳转gotUpdate，goAdd，goDetail(查看接受id)
+保存删除的doBlBankParamterUpdate，doBlBankParamterdel
+列表查询方法datagridBlBankParamter
+枚举类型定义
+模块分配矩阵
+工作日志
+
+

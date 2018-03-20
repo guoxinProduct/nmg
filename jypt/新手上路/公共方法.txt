@@ -1,0 +1,97 @@
+1.读取资源文件配置
+ResourceUtil.getConfigByName("sender.inviliDate")
+
+2.用户信息获取
+TSUser user = ResourceUtil.getSessionUserName();
+
+ 
+TSRole role =user.getCurrentRol();
+
+修改火狐不能上传附件问题代码已提交
+各自找到对应模板的附件上传保存方法，增加如下代码
+HttpSession session = ContextHolderUtils.getSession();
+session.getServletContext().setAttribute(session.getId(), session);
+//接口中根据用户名密码获取部门
+TSDepart tSDepart=userService.getTSDepartByUserNameAndPassword(userName,password);
+//当前部门
+TSDepart currentDepart = systemService.get(TSDepart.class, user.getDepartid());
+
+根据机构编码获取机构id
+					String departId =	tSDepartInfoServiceI.getDepartIdByOrgCode(String orgCode)
+//部门id获取部门对象
+				String departId = tSDepartInfoService.getPdepartIdByDepartId(departId);
+//部门扩展信息
+TSDepartInfoEntity departInfo = tSDepartInfoService.getDepartInfoBydepartId(departId);
+//根据主体类型获取机构列表
+List<TSDepartInfoEntity> list = tSDepartInfoService.getTSDepartInfoListByRoleName(String departRoleName);
+//通过属性查询
+List<TSDepart> list = systemService.findByProperty(TSDepart.class, "orgCode", tenderOrgCode);
+
+---接口获取用户信息
+TSUser tSUser=new TSUser();
+				String decodeStringPassword = StringUtil.decodeString(password); //用Base64算法对字符串进行解码.
+				tSUser.setPassword(decodeStringPassword);
+				tSUser.setUserName(username);
+				 TSUser user = userService.checkUserExits(tSUser);
+				if(user!=null){
+					supplierId=user.getDepartid();
+				}
+
+			
+
+3.项目
+//阶段id获取包组
+TBProjectPackageEntity tBProjectPackageEntity  tBStageServiceI.getTBProjectPackageEntityByStageId(String stageid)
+//获取当前公告的所有包件
+List<TBPackBulletinEntity> tBPackBulletinList =tBPackBulletinService.getTBPackBulletinEntityByTBBulletinEntityId(id);
+//根据包件id得到包件集合
+List<TBProjectPackageEntity> list= tBProjectPackageService.getTBProjectPackageEntityList(String ids);
+//根据项目id 获取包件集合
+List<TBProjectPackageEntity> getPackageListByTenderid(String tenderid, Integer... isPack)
+	根据项目编号包组编号获取包组对象
+ TBProjectPackageEntity tBProjectPackageEntity = TBProjectPackageServiceI.getProjectPackageByPrjCodePackCode(projCode,packCode);
+ 根据项目编号获取项目
+TBTenderProjectEntity tBTenderProjectEntity = tBTenderProjectService.getTBTenderProjectEntityByTenderNo(tenderno);
+//获取可选包组
+		List<TBProjectPackageEntity> list=tBProjectPackageService.getTBProjectPackageByTableStageType(CommonUtilEnum.PROCFILERATIONTABLE,stagetype);
+
+4.时间规则 
+//根据公告id获取时间规则
+TBProjectRuleEntity tBProjectRuleEntity= tBProjectRuleService.getTBProjectRuleEntityBytBBulletinId(BulletinId)
+//根据公告明细id获取时间规则集合
+List<TBProjectRuleEntity> list = tBProjectRuleService.getTBProjectRuleByPackIds(tBPickBulletPackIds);
+ 
+5.报名记录
+//根据公告id和报名id,审核状态取报名记录
+public List<TBSignupEntity> getTBSignupByBulletionIdSupId(String bulletionid, String supplyerid,String auditStatus);
+
+//根据包组查询报名记录 报名表，报名明细表，轮次表
+select p.* from t_b_tender_signup p ,t_b_pack_signup m,t_b_stage t where 
+t.id=m.STAGEID and m.SIGNUPID=p.id and m.PACKID='' and  t.stage_type='00' ORDER BY   p.CREATE_TIME DESC 
+
+
+6.获取当前用户对项目所报名的所有包组	
+//获取当前用户对项目所报名的所有包组
+List<TBProjectPackageEntity> userProjectPackList=tBProjectPackageService.getCurrentUserSignUpPacks(user.getDepartid(),tenderId);
+
+7.公告
+//根据公告id获取公告明细集合
+List<TBPackBulletinEntity> list =  tBPackBulletinService.getTBPackBulletinEntityByTBBulletinEntityId(id);
+
+8.规则设置
+9.根据供应商id和包组id，轮次id获取投标信息
+List<TBBidEntity> bidList = TBBidService.getAllBidByProjectIdAndSupplierId(projectId, supplierId, stageId);
+10.招标文件
+通过包组id，轮次id获取招标文件
+TBTenderProcfileEntity tBTenderProcfileEntity=tBTenderProcfileService.getTBTenderProcfileEntityByProjectIdAndStageId(packId,stageid);
+		
+		图片路径
+	String sdate =DateSystemUtil.format(new Date(),DateSystemUtil.yearMonth);
+D:/upload/image/sdate
+ 	
+ 	DateUtils.getDataString(DateUtils.yyyyMMdd)
+ 	
+//根据用户名和密码获取用户的顶级部门 用户名和密码不对就返回空 	
+ UserServiceImpl	getTSDepartByUserNameAndPassword(userName,password)
+ //一个有引不到的js 有可能是jeecg升级会有但是目前整个项目都删除了这个应用  add by  hubin
+ http://172.16.7.144:8080/jeecg/plug-in/ckeditor_new/ckeditor.js
